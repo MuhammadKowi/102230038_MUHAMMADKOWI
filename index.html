@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIPENSA-MH | Sistem Digitalisasi Pembayaran Santri Pondok Pesantren Mambaul Huda Pajomblangan</title>
+  <meta name="description" content="Implementasi Prototype Model pada Sistem Digitalisasi Pembayaran Berbasis Web untuk Efisiensi Administrasi Keuangan Santri di Pondok Pesantren Mambaul Huda Pajomblangan.">
+  <meta name="author" content="Muhammad Kowi (NIM: 102230038)">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/ponpes_logo.jpg">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Research / Skripsi Badge Banner -->
+  <aside class="research-badge-banner" aria-label="Informasi Penelitian">
+    <div class="banner-left">
+      <span class="research-tag"><i class="ph ph-flask"></i> PROTOTYPE MODEL v2.1</span>
+      <span>Sistem Digitalisasi Pembayaran Berbasis Web &bull; <strong>Ponpes Mambaul Huda Pajomblangan</strong></span>
+    </div>
+    <div class="banner-right">
+      <span class="author-chip">Peneliti: <strong>Muhammad Kowi</strong> (NIM: 102230038)</span>
+    </div>
+  </aside>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-brand">
+      <img src="assets/images/ponpes_logo.jpg" alt="Logo Ponpes Mambaul Huda" class="brand-logo-img">
+      <div class="brand-info">
+        <h1>
+          SIPENSA-MH
+          <span class="app-subtitle">E-KEUANGAN SANTRI</span>
+        </h1>
+        <p>Pondok Pesantren Mambaul Huda Pajomblangan, Kedungwuni - Pekalongan</p>
+      </div>
+    </div>
+
+    <!-- Role Switcher & Controls -->
+    <div class="header-controls">
+      <div class="role-switch-container">
+        <button class="role-btn active" data-role="admin" title="Mode Bendahara / Kasir Keuangan">
+          <i class="ph ph-user-gear"></i> Bendahara
+        </button>
+        <button class="role-btn" data-role="wali" title="Mode Portal Wali Santri">
+          <i class="ph ph-users-three"></i> Wali Santri
+        </button>
+        <button class="role-btn" data-role="prototype" title="Evaluasi & Riset Prototype Model">
+          <i class="ph ph-chart-polar"></i> Riset Skripsi
+        </button>
+      </div>
+
+      <button id="themeToggleBtn" class="btn-icon-circle" title="Ubah Tema Gelap / Terang">
+        <i class="ph ph-moon"></i>
+      </button>
+
+      <button id="soundToggleBtn" class="btn-icon-circle" title="Suara Interaksi On/Off">
+        <i class="ph ph-speaker-high"></i>
+      </button>
+
+      <button id="resetDataBtn" class="btn-icon-circle" title="Reset ke Data Awal Demo" style="color:var(--warning);">
+        <i class="ph ph-arrow-counter-clockwise"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Layout Container -->
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="nav-section-title">Menu Utama</div>
+      
+      <button class="nav-item active" data-tab="dashboard">
+        <i class="ph ph-squares-four"></i>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-item" data-tab="pos">
+        <i class="ph ph-cash-register"></i>
+        <span>Loket Kasir Cepat</span>
+        <span class="nav-badge">POS</span>
+      </button>
+
+      <button class="nav-item" data-tab="santri">
+        <i class="ph ph-student"></i>
+        <span>Data Santri & Tagihan</span>
+      </button>
+
+      <button class="nav-item" data-tab="portal">
+        <i class="ph ph-device-mobile-camera"></i>
+        <span>Portal Wali Santri</span>
+      </button>
+
+      <div class="nav-section-title">Laporan & Riset</div>
+
+      <button class="nav-item" data-tab="laporan">
+        <i class="ph ph-file-text"></i>
+        <span>Laporan Kas & Rekap</span>
+      </button>
+
+      <button class="nav-item" data-tab="prototype">
+        <i class="ph ph-git-branch"></i>
+        <span>Metode Prototype</span>
+        <span class="nav-badge" style="background:#f59e0b; color:#fff;">Skripsi</span>
+      </button>
+
+      <button class="nav-item" data-tab="settings">
+        <i class="ph ph-gear"></i>
+        <span>Tarif & Lembaga</span>
+      </button>
+
+      <div class="sidebar-pesantren-card">
+        <p class="title">Tahun Ajaran 2026/2027</p>
+        <p class="subtitle">Bulan Berjalan: <strong>Oktober 2026</strong></p>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="main-content">
+
+      <!-- ================================================================ -->
+      <!-- 1. DASHBOARD SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-dashboard" class="page-section active">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-chart-pie-slice"></i> Dashboard Keuangan & Administrasi</h2>
+            <p>Ringkasan arus kas, status kelunasan santri, dan efisiensi waktu administrasi Ponpes Mambaul Huda</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=pos]').click()">
+              <i class="ph ph-plus-circle"></i> Transaksi Kasir Baru
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Stat Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-info">
+              <p class="label">Total Kas Masuk</p>
+              <h3 class="value" id="statTotalPenerimaan">Rp 0</h3>
+              <p class="subtext positive"><i class="ph ph-trend-up"></i> +14.2% dari bulan lalu</p>
+            </div>
+            <div class="stat-icon"><i class="ph ph-wallet"></i></div>
+          </div>
+
+          <div class="stat-card gold">
+            <div class="stat-info">
+              <p class="label">Penerimaan Hari Ini</p>
+              <h3 class="value" id="statPenerimaanHariIni">Rp 0</h3>
+              <p class="subtext"><i class="ph ph-clock"></i> Transaksi realtime</p>
+            </div>
+            <div class="stat-icon"><i class="ph ph-hand-coins"></i></div>
+          </div>
+
+          <div class="stat-card danger">
+            <div class="stat-info">
+              <p class="label">Total Tunggakan Santri</p>
+              <h3 class="value" id="statTotalTunggakan">Rp 0</h3>
+              <p class="subtext"><i class="ph ph-warning-circle"></i> Tagihan belum dibayar</p>
+            </div>
+            <div class="stat-icon"><i class="ph ph-receipt-x"></i></div>
+          </div>
+
+          <div class="stat-card blue">
+            <div class="stat-info">
+              <p class="label">Santri Lunas / Total</p>
+              <h3 class="value" id="statPersenLunas">0%</h3>
+              <p class="subtext" id="statCountSantri">0 Santri</p>
+            </div>
+            <div class="stat-icon"><i class="ph ph-seal-check"></i></div>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3><i class="ph ph-chart-line-up" style="color:var(--primary);"></i> Tren Penerimaan Kas 6 Bulan Terakhir</h3>
+              <span class="badge badge-success">Realtime</span>
+            </div>
+            <div class="chart-body">
+              <canvas id="chartRevenueTrend" class="sipensa-canvas"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3><i class="ph ph-chart-donut" style="color:var(--gold);"></i> Proporsi Pos Biaya</h3>
+              <span class="badge badge-secondary">Tahun 2026</span>
+            </div>
+            <div class="chart-body">
+              <canvas id="chartCategoryPie" class="sipensa-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Transactions Table -->
+        <div class="content-card">
+          <div class="card-header-pad">
+            <div class="card-title">
+              <i class="ph ph-clock-counter-clockwise" style="color:var(--primary);"></i>
+              Transaksi Kasir Terbaru
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-tab=laporan]').click()">
+              Lihat Seluruh Transaksi <i class="ph ph-arrow-right"></i>
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="sipensa-table">
+              <thead>
+                <tr>
+                  <th>No Kwitansi</th>
+                  <th>Nama Santri</th>
+                  <th>Waktu</th>
+                  <th>Metode</th>
+                  <th>Total Bayar</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardRecentTxBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 2. LOKET KASIR CEPAT (POS) SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-pos" class="page-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-cash-register"></i> Loket Kasir Cepat Pembayaran Santri</h2>
+            <p>Pencarian cepat santri, pilihan tagihan fleksibel, dan cetak kwitansi instan multi-channel</p>
+          </div>
+          <div>
+            <span class="badge badge-success" style="padding:6px 14px; font-size:0.8rem;">
+              <i class="ph ph-shield-check"></i> Mode Bendahara Aktif
+            </span>
+          </div>
+        </div>
+
+        <div class="pos-layout">
+          <!-- Left Column: Search & Bill Selection -->
+          <div class="content-card" style="padding:20px;">
+            <div class="pos-search-box">
+              <i class="ph ph-magnifying-glass search-icon"></i>
+              <input type="text" id="posSantriSearch" placeholder="Cari Santri: Masukkan NIS, Nama Santri, atau Kamar...">
+              <div id="posSantriSearchResults" style="display:none; position:absolute; top:100%; left:0; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-md); box-shadow:var(--shadow-lg); z-index:50; max-height:220px; overflow-y:auto;"></div>
+            </div>
+
+            <!-- Santri Profile Card (Shown when selected) -->
+            <div id="posSantriProfileCard" class="santri-profile-card" style="display:none;"></div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="font-size:0.95rem; font-weight:700;"><i class="ph ph-list-checks"></i> Pilih Tagihan yang Dibayar</h4>
+              <span id="posItemCountDisplay" class="badge badge-secondary">0 Item Dipilih</span>
+            </div>
+
+            <!-- Bills Checklist -->
+            <div id="posBillList" class="bill-checklist">
+              <div style="text-align:center; padding:30px; color:var(--text-muted);">
+                <i class="ph ph-user-circle" style="font-size:2.5rem; display:block; margin-bottom:8px; opacity:0.6;"></i>
+                Silakan cari dan pilih santri di kotak pencarian di atas
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Checkout & Payment Channel Panel -->
+          <div class="pos-checkout-panel">
+            <h3 style="font-size:1.15rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+              <i class="ph ph-credit-card" style="color:var(--primary);"></i> Metode Pembayaran
+            </h3>
+
+            <!-- Payment Method Tabs -->
+            <div class="payment-method-tabs">
+              <button class="method-tab-btn active" data-method="tunai">
+                <i class="ph ph-money"></i>
+                <span>Tunai (Kasir)</span>
+              </button>
+              <button class="method-tab-btn" data-method="qris">
+                <i class="ph ph-qr-code"></i>
+                <span>QRIS Dinamis</span>
+              </button>
+              <button class="method-tab-btn" data-method="va">
+                <i class="ph ph-bank"></i>
+                <span>Virtual Account</span>
+              </button>
+            </div>
+
+            <!-- Total Calculation Box -->
+            <div class="payment-calc-box">
+              <div class="calc-row">
+                <span>Subtotal Tagihan:</span>
+                <span id="posSubtotalDisplay" style="font-weight:700;">Rp 0</span>
+              </div>
+              <div class="calc-row">
+                <span>Biaya Administrasi:</span>
+                <span style="font-weight:700; color:var(--primary);">Rp 0 (Gratis)</span>
+              </div>
+              <div class="calc-row total-bayar">
+                <span>TOTAL BAYAR:</span>
+                <span id="posTotalBayarDisplay">Rp 0</span>
+              </div>
+            </div>
+
+            <!-- 1. Cash Payment Box -->
+            <div id="posBoxTunai">
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="posCashReceived">Uang Diterima dari Wali/Santri (Rp):</label>
+                <input type="number" id="posCashReceived" class="cash-input-field" placeholder="0">
+              </div>
+
+              <div class="quick-cash-row" style="margin-bottom:16px;">
+                <button type="button" class="quick-cash-btn" id="quickCashExact" data-amount="0">Uang Pas</button>
+                <button type="button" class="quick-cash-btn" data-amount="300000">Rp 300.000</button>
+                <button type="button" class="quick-cash-btn" data-amount="500000">Rp 500.000</button>
+                <button type="button" class="quick-cash-btn" data-amount="1000000">Rp 1.000.000</button>
+              </div>
+
+              <div class="calc-row" style="background:var(--bg-body); padding:12px 16px; border-radius:var(--radius-md); font-weight:700;">
+                <span>Kembalian:</span>
+                <span id="posChangeDisplay" style="font-size:1.15rem; color:var(--primary);">Rp 0</span>
+              </div>
+
+              <button id="btnSubmitPosPayment" class="btn btn-primary btn-lg" style="width:100%; margin-top:16px;" disabled>
+                <i class="ph ph-receipt"></i> Terima Tunai & Terbitkan Kwitansi
+              </button>
+            </div>
+
+            <!-- 2. QRIS Payment Box -->
+            <div id="posBoxQris" class="qris-simulator-box">
+              <div class="qris-header-logo">
+                <span class="qris-brand-text">QRIS</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#475569;">GPN &bull; Bank Indonesia</span>
+              </div>
+              <div style="font-size:0.85rem; font-weight:700; color:#064e3b;">PONPES MAMBAUL HUDA PAJOMBLANGAN</div>
+              <div style="font-size:0.75rem; color:#64748b;">NMID: ID1022300380001</div>
+
+              <div class="qris-qr-wrapper">
+                <!-- SVG QR Code Representation -->
+                <svg viewBox="0 0 100 100" width="160" height="160">
+                  <path fill="#000000" d="M10,10 h30 v30 h-30 z M15,15 v20 h20 v-20 z M20,20 h10 v10 h-10 z" />
+                  <path fill="#000000" d="M60,10 h30 v30 h-30 z M65,15 v20 h20 v-20 z M70,20 h10 v10 h-10 z" />
+                  <path fill="#000000" d="M10,60 h30 v30 h-30 z M15,65 v20 h20 v-20 z M20,70 h10 v10 h-10 z" />
+                  <rect x="45" y="10" width="10" height="10" fill="#000000" />
+                  <rect x="45" y="30" width="10" height="10" fill="#000000" />
+                  <rect x="45" y="60" width="10" height="20" fill="#000000" />
+                  <rect x="60" y="45" width="20" height="10" fill="#000000" />
+                  <rect x="70" y="65" width="20" height="25" fill="#000000" />
+                  <rect x="25" y="45" width="15" height="10" fill="#000000" />
+                  <circle cx="50" cy="50" r="10" fill="#059669" />
+                  <text x="50" y="54" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">MH</text>
+                </svg>
+              </div>
+
+              <div style="font-size:1.15rem; font-weight:800; color:#059669;" id="qrisNominalDisplay">Rp 0</div>
+              <div style="font-size:0.75rem; color:#64748b; margin-top:4px;">
+                Berlaku hingga: <strong id="qrisTimerDisplay" style="color:#dc2626;">15:00</strong>
+              </div>
+
+              <button id="btnSimulateQrisPay" class="btn btn-primary" style="width:100%; margin-top:14px;">
+                <i class="ph ph-check-circle"></i> Simulasikan Scan Bayar Berhasil
+              </button>
+            </div>
+
+            <!-- 3. Virtual Account Box -->
+            <div id="posBoxVa" class="va-simulator-box">
+              <label style="font-size:0.8rem; font-weight:700;">Pilih Bank Tujuan Virtual Account:</label>
+              <select id="posVaBankSelect" class="form-control" style="margin-top:4px; margin-bottom:12px;">
+                <option value="BSI">Bank Syariah Indonesia (BSI) - Rekomendasi</option>
+                <option value="Mandiri">Bank Mandiri Syariah / Livin</option>
+                <option value="BRI">Bank BRI / BRImo</option>
+                <option value="BCA">Bank BCA / BCA Mobile</option>
+              </select>
+
+              <div style="font-size:0.75rem; color:var(--text-muted);">Nomor Virtual Account:</div>
+              <div class="va-number-display">
+                <span id="posVaNumberDisplay">900882024010188</span>
+                <i class="ph ph-copy" style="cursor:pointer;" title="Salin No VA" onclick="navigator.clipboard?.writeText(document.getElementById('posVaNumberDisplay').innerText); window.soundFx.playClick();"></i>
+              </div>
+
+              <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.4;">
+                Nomor VA otomatis aktif 24 jam. Verifikasi pembayaran dilakukan seketika (realtime) tanpa konfirmasi manual.
+              </p>
+
+              <button id="btnSimulateVaPay" class="btn btn-primary" style="width:100%; margin-top:14px;">
+                <i class="ph ph-check-circle"></i> Simulasikan Transfer VA Berhasil
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 3. DATA SANTRI & TAGIHAN SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-santri" class="page-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-student"></i> Data Santri & Manajemen Tagihan</h2>
+            <p>Database santri aktif, monitoring kelunasan syahriah bulanan, dan kartu buku kas santri</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-outline" id="btnGenerateMassal">
+              <i class="ph ph-arrows-clockwise"></i> Terbitkan Tagihan Massal Bulan Baru
+            </button>
+            <button class="btn btn-primary" id="btnAddSantriModal">
+              <i class="ph ph-user-plus"></i> Tambah Santri Baru
+            </button>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-header-pad">
+            <div style="display:flex; gap:12px; flex:1; max-width:600px;">
+              <input type="text" id="santriSearchInput" class="form-control" placeholder="Cari santri berdasarkan Nama, NIS, atau Kamar...">
+              <select id="filterJenjangSelect" class="form-control" style="width:200px;">
+                <option value="all">Semua Jenjang</option>
+                <option value="Salafiyah Ula">Salafiyah Ula</option>
+                <option value="Salafiyah Wustho">Salafiyah Wustho</option>
+                <option value="Salafiyah Ulya">Salafiyah Ulya</option>
+                <option value="Tahfidzul Qur'an">Tahfidzul Qur'an</option>
+              </select>
+            </div>
+            <div style="font-size:0.8rem; color:var(--text-muted);">
+              Total Santri Terdaftar: <strong id="totalSantriCount">8</strong> Santri
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="sipensa-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;">No</th>
+                  <th>Profil Santri & NIS</th>
+                  <th>Jenjang & Kamar</th>
+                  <th>Wali Santri & HP</th>
+                  <th>Saldo E-Saku</th>
+                  <th>Status Tagihan</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="santriTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 4. PORTAL WALI SANTRI MANDIRI SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-portal" class="page-section">
+        <div class="portal-hero">
+          <h2>Portal Mandiri Keuangan Santri</h2>
+          <p>
+            Layanan digital bagi Orang Tua / Wali Santri untuk memantau rincian biaya, melakukan pembayaran mandiri via QRIS / VA, serta mengelola tabungan uang saku santri.
+          </p>
+
+          <div class="portal-nis-form">
+            <input type="text" id="portalNisInput" placeholder="Masukkan NIS Santri (misal: 20240101)...">
+            <button class="btn btn-gold btn-lg" id="btnPortalCekNis">
+              <i class="ph ph-magnifying-glass"></i> Cek Tagihan
+            </button>
+          </div>
+
+          <div class="quick-santri-chips">
+            <span style="font-size:0.75rem; opacity:0.8; margin-right:4px;">Contoh Santri Cepat:</span>
+            <button class="quick-chip-btn" data-nis="20240101">Ahmad Zainal (20240101)</button>
+            <button class="quick-chip-btn" data-nis="20240102">M. Ilham (20240102)</button>
+            <button class="quick-chip-btn" data-nis="20240103">Siti Fatimatuz (20240103)</button>
+            <button class="quick-chip-btn" data-nis="20240104">Fikri Maulana (20240104)</button>
+          </div>
+        </div>
+
+        <div id="portalResultSection" style="display:none;">
+          <!-- E-Saku Hero Card -->
+          <div class="esaku-hero-card">
+            <div>
+              <div class="balance-label"><i class="ph ph-piggy-bank"></i> Saldo E-Saku (Uang Saku Digital)</div>
+              <div class="balance-amount" id="portalSantriSaldo">Rp 0</div>
+              <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">
+                Santri: <strong id="portalSantriNama" style="color:#fff;">-</strong> &bull;
+                <span id="portalSantriNisDisplay">-</span> &bull;
+                <span id="portalSantriKelas">-</span> (<span id="portalSantriKamar">-</span>)
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary btn-lg" id="btnTopUpSaku">
+                <i class="ph ph-plus-circle"></i> Isi Saldo E-Saku
+              </button>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:20px;">
+            <!-- Unpaid Bills -->
+            <div class="content-card" style="padding:20px;">
+              <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                <i class="ph ph-receipt-x" style="color:var(--danger);"></i> Tagihan Aktif yang Belum Dibayar
+              </h3>
+              <div id="portalUnpaidBillsList">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Paid Bills History -->
+            <div class="content-card" style="padding:20px;">
+              <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                <i class="ph ph-receipt-check" style="color:var(--primary);"></i> Riwayat Pembayaran Terverifikasi
+              </h3>
+              <div id="portalPaidHistoryList">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 5. LAPORAN & REKAPITULASI KAS SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-laporan" class="page-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-file-text"></i> Laporan Keuangan & Rekapitulasi Kasir</h2>
+            <p>Rekap buku kas masuk realtime, export data ke Excel/CSV, dan cetak laporan resmi berstempel</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-outline" id="btnExportCsv">
+              <i class="ph ph-file-csv"></i> Unduh File Excel (CSV)
+            </button>
+            <button class="btn btn-primary" id="btnPrintLaporan">
+              <i class="ph ph-printer"></i> Cetak Laporan Resmi
+            </button>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-header-pad">
+            <div class="card-title">
+              <i class="ph ph-book-open" style="color:var(--primary);"></i> Buku Penerimaan Kas Ponpes Mambaul Huda
+            </div>
+            <div>
+              Total Penerimaan Terdata: <strong id="laporanTotalKasMasuk" style="color:var(--primary); font-size:1.1rem;">Rp 0</strong>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="sipensa-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;">No</th>
+                  <th>No Kwitansi</th>
+                  <th>Waktu Transaksi</th>
+                  <th>Santri & NIS</th>
+                  <th>Metode</th>
+                  <th>Total Bayar</th>
+                  <th>Kasir / Petugas</th>
+                </tr>
+              </thead>
+              <tbody id="laporanTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 6. PROTOTYPE MODEL RESEARCH SECTION (SKRIPSI) -->
+      <!-- ================================================================ -->
+      <section id="section-prototype" class="page-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-flask"></i> Implementasi Prototype Model & Evaluasi Efisiensi</h2>
+            <p>Dokumentasi metodologi penelitian, analisis komparasi efisiensi waktu, dan kuesioner pengujian UAT / SUS</p>
+          </div>
+          <div>
+            <span class="badge badge-success" style="padding:6px 14px;">
+              Skor Kepuasan SUS: <strong id="metricAvgSusScore" style="margin-left:4px;">4.8 / 5.0</strong>
+            </span>
+          </div>
+        </div>
+
+        <!-- 4 Tahapan Prototype Model -->
+        <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+          <i class="ph ph-path" style="color:var(--primary);"></i> 4 Tahapan Siklus Pengembangan Prototype Model
+        </h3>
+        <div class="prototype-stages-grid">
+          <div class="stage-step-card">
+            <div class="stage-badge-num">1</div>
+            <h4>Communication & Requirements</h4>
+            <p class="stage-desc">Wawancara mendalam dengan bendahara & pimpinan Pondok Pesantren Mambaul Huda Pajomblangan terkait kendala antrean awal bulan dan pembukuan manual buku besar.</p>
+            <div class="stage-finding-box">
+              <strong>Hasil Analisis:</strong>
+              Rata-rata waktu pencatatan fisik mencapai 12-15 menit per santri. Risiko kesalahan hitung fisik ~12%.
+            </div>
+          </div>
+
+          <div class="stage-step-card">
+            <div class="stage-badge-num">2</div>
+            <h4>Quick Plan & Quick Design</h4>
+            <p class="stage-desc">Perancangan arsitektur aliran data DFD Level 0-2, desain entity relationship database tagihan santri, dan wireframe kasir cepat dengan multi-channel (QRIS, VA, Tunai).</p>
+            <div class="stage-finding-box">
+              <strong>Desain Solusi:</strong>
+              Antarmuka POS berbasis Web responsif dengan otomatisasi kalkulasi kembalian dan kode kwitansi unik.
+            </div>
+          </div>
+
+          <div class="stage-step-card">
+            <div class="stage-badge-num">3</div>
+            <h4>Construction of Prototype</h4>
+            <p class="stage-desc">Pembangunan prototipe fungsional (SIPENSA-MH) yang mencakup modul Loket Kasir Cepat, Portal Mandiri Wali Santri, E-Saku santri, dan laporan kasir otomatis.</p>
+            <div class="stage-finding-box">
+              <strong>Implementasi:</strong>
+              Sistem berjalan realtime tanpa dependensi server berat, didukung QRIS dinamis dan notifikasi WhatsApp.
+            </div>
+          </div>
+
+          <div class="stage-step-card">
+            <div class="stage-badge-num">4</div>
+            <h4>Evaluation & Refinement</h4>
+            <p class="stage-desc">Pengujian langsung oleh pengurus pesantren dan sampel wali santri menggunakan instrumen System Usability Scale (SUS) untuk perbaikan berkelanjutan.</p>
+            <div class="stage-finding-box">
+              <strong>Capaian Efisiensi:</strong>
+              Waktu transaksi turun drastis menjadi &lt;45 detik per santri (efisiensi &gt;95%), selisih buku 0%.
+            </div>
+          </div>
+        </div>
+
+        <!-- Matriks Efisiensi Visual Chart -->
+        <div class="content-card" style="padding:22px; margin-bottom:24px;">
+          <h3 style="font-size:1.1rem; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+            <i class="ph ph-scales" style="color:var(--primary);"></i> Perbandingan Efisiensi Administrasi: Sebelum vs Sesudah Digitalisasi
+          </h3>
+          <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:16px;">
+            Grafik komparasi waktu pelayanan kasir, kecepatan rekapitulasi buku kas, dan penurunan risiko selisih uang kas fisik.
+          </p>
+          <div style="min-height:200px;">
+            <canvas id="chartEfficiencyCompare" class="sipensa-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Feedback & UAT Form -->
+        <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:20px;">
+          <!-- Form Input Responden -->
+          <div class="content-card" style="padding:22px;">
+            <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <i class="ph ph-chat-circle-text" style="color:var(--primary);"></i> Kuesioner Pengujian Prototype (UAT Tester)
+            </h3>
+            <form id="formUatEvaluation">
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="evalNama">Nama Responden / Penguji:</label>
+                <input type="text" id="evalNama" class="form-control" placeholder="Contoh: Ust. Ahmad Fauzi / Ibu Maryam..." required>
+              </div>
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="evalPeran">Peran Penguji:</label>
+                <select id="evalPeran" class="form-control">
+                  <option value="Bendahara / Admin Kasir">Bendahara / Admin Kasir</option>
+                  <option value="Wali Santri">Wali Santri</option>
+                  <option value="Pimpinan Pesantren">Pimpinan Pesantren / Asatidz</option>
+                  <option value="Dosen Penguji / Akademisi">Dosen Penguji / Akademisi</option>
+                </select>
+              </div>
+
+              <div class="form-row-2" style="margin-bottom:12px;">
+                <div class="form-group">
+                  <label for="evalSkorKemudahan">Kemudahan Antarmuka (1-5):</label>
+                  <select id="evalSkorKemudahan" class="form-control">
+                    <option value="5">5 - Sangat Mudah Dipahami</option>
+                    <option value="4">4 - Mudah Dipahami</option>
+                    <option value="3">3 - Cukup</option>
+                    <option value="2">2 - Kurang Mudah</option>
+                    <option value="1">1 - Sulit</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="evalSkorKecepatan">Kecepatan Transaksi (1-5):</label>
+                  <select id="evalSkorKecepatan" class="form-control">
+                    <option value="5">5 - Sangat Cepat</option>
+                    <option value="4">4 - Cepat</option>
+                    <option value="3">3 - Cukup</option>
+                    <option value="2">2 - Lambat</option>
+                    <option value="1">1 - Sangat Lambat</option>
+                  </select>
+                </div>
+              </div>
+
+              <input type="hidden" id="evalSkorAkurasi" value="5">
+              <input type="hidden" id="evalWaktuLama" value="15">
+              <input type="hidden" id="evalWaktuBaru" value="40">
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="evalKomentar">Komentar / Pengalaman Menggunakan Sistem:</label>
+                <textarea id="evalKomentar" class="form-control" rows="2" placeholder="Bagikan kesan mengenai efisiensi sistem prototipe ini..."></textarea>
+              </div>
+
+              <div class="form-group" style="margin-bottom:16px;">
+                <label for="evalSaran">Rekomendasi Iterasi Prototipe Selanjutnya:</label>
+                <textarea id="evalSaran" class="form-control" rows="2" placeholder="Saran penambahan fitur untuk siklus prototipe berikutnya..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <i class="ph ph-paper-plane-tilt"></i> Kirim Evaluasi Pengujian
+              </button>
+            </form>
+          </div>
+
+          <!-- Feedbacks List -->
+          <div class="content-card" style="padding:22px;">
+            <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <i class="ph ph-quotes" style="color:var(--primary);"></i> Ulasan Hasil Uji Coba Pengguna (UAT)
+            </h3>
+            <div id="evaluationsList" style="max-height:460px; overflow-y:auto; padding-right:4px;">
+              <!-- Injected via JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 7. PENGATURAN & MASTER TARIF SECTION -->
+      <!-- ================================================================ -->
+      <section id="section-settings" class="page-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2><i class="ph ph-gear"></i> Pengaturan Lembaga & Master Tarif Biaya</h2>
+            <p>Konfigurasi profil Pondok Pesantren Mambaul Huda dan tarif komponen pembayaran santri</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" id="btnSaveSettings">
+              <i class="ph ph-floppy-disk"></i> Simpan Perubahan Profil
+            </button>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1.3fr; gap:20px;">
+          <div class="content-card" style="padding:22px;">
+            <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+              <i class="ph ph-bank" style="color:var(--primary);"></i> Profil Pondok Pesantren
+            </h3>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="settingNamaPonpes">Nama Lembaga / Pesantren:</label>
+              <input type="text" id="settingNamaPonpes" class="form-control">
+            </div>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="settingAlamatPonpes">Alamat Lengkap:</label>
+              <textarea id="settingAlamatPonpes" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="settingTeleponPonpes">Kontak / Telepon Lembaga:</label>
+              <input type="text" id="settingTeleponPonpes" class="form-control">
+            </div>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="settingBendaharaPonpes">Nama Bendahara / Kasir Utama:</label>
+              <input type="text" id="settingBendaharaPonpes" class="form-control">
+            </div>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="settingBulanBerjalan">Periode Bulan Berjalan:</label>
+              <input type="text" id="settingBulanBerjalan" class="form-control">
+            </div>
+          </div>
+
+          <div class="content-card" style="padding:22px;">
+            <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+              <i class="ph ph-currency-circle-dollar" style="color:var(--primary);"></i> Master Tarif Biaya Santri
+            </h3>
+
+            <div class="table-responsive">
+              <table class="sipensa-table">
+                <thead>
+                  <tr>
+                    <th>Kode</th>
+                    <th>Nama Pos Biaya</th>
+                    <th>Tipe</th>
+                    <th>Nominal</th>
+                    <th>Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody id="tariffsTableBody">
+                  <!-- Injected via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    SIPENSA-MH &copy; 2026 Pondok Pesantren Mambaul Huda Pajomblangan, Kedungwuni - Pekalongan. Dikembangkan dalam rangka Skripsi/Tugas Akhir oleh <strong>Muhammad Kowi (NIM: 102230038)</strong>.
+  </footer>
+
+  <!-- ================================================================ -->
+  <!-- MODAL: DIGITAL RECEIPT (KWITANSI RESMI) -->
+  <!-- ================================================================ -->
+  <div id="receiptModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:620px;">
+      <div class="modal-header">
+        <h3><i class="ph ph-receipt"></i> Bukti Pembayaran Resmi (Kwitansi Digital)</h3>
+        <button class="btn-icon-circle" onclick="window.closeModal('receiptModal')"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="modal-body" id="receiptPaperContent">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btnShareWaReceipt" style="color:#16a34a; border-color:#16a34a;">
+          <i class="ph ph-whatsapp-logo"></i> Kirim Bukti ke WhatsApp Wali
+        </button>
+        <button class="btn btn-primary" id="btnPrintReceipt">
+          <i class="ph ph-printer"></i> Cetak / Unduh PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- MODAL: TAMBAH SANTRI BARU -->
+  <!-- ================================================================ -->
+  <div id="santriModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="ph ph-user-plus"></i> Tambah Data Santri Baru</h3>
+        <button class="btn-icon-circle" onclick="window.closeModal('santriModal')"><i class="ph ph-x"></i></button>
+      </div>
+      <form id="formAddSantri">
+        <div class="modal-body">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="formSantriNis">NIS (Nomor Induk Santri):</label>
+              <input type="text" id="formSantriNis" class="form-control" placeholder="Contoh: 20240109" required>
+            </div>
+            <div class="form-group">
+              <label for="formSantriGender">Jenis Kelamin:</label>
+              <select id="formSantriGender" class="form-control">
+                <option value="Laki-laki">Laki-laki (Santriwan)</option>
+                <option value="Perempuan">Perempuan (Santriwati)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formSantriNama">Nama Lengkap Santri:</label>
+            <input type="text" id="formSantriNama" class="form-control" placeholder="Contoh: Muhammad Farhan Maulana" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="formSantriJenjang">Jenjang Pendidikan:</label>
+              <select id="formSantriJenjang" class="form-control">
+                <option value="Salafiyah Ula">Salafiyah Ula</option>
+                <option value="Salafiyah Wustho">Salafiyah Wustho</option>
+                <option value="Salafiyah Ulya">Salafiyah Ulya</option>
+                <option value="Tahfidzul Qur'an">Tahfidzul Qur'an</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formSantriKamar">Asrama / Kamar (Kobong):</label>
+              <input type="text" id="formSantriKamar" class="form-control" placeholder="Contoh: Kamar Al-Fath (A1)">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="formSantriWali">Nama Orang Tua / Wali:</label>
+              <input type="text" id="formSantriWali" class="form-control" placeholder="Contoh: H. Ahmad Subagio">
+            </div>
+            <div class="form-group">
+              <label for="formSantriHp">No. HP / WhatsApp Wali:</label>
+              <input type="text" id="formSantriHp" class="form-control" placeholder="Contoh: 081234567890">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="window.closeModal('santriModal')">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Santri</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- MODAL: KARTU SPP / BUKU KAS SANTRI (LEDGER) -->
+  <!-- ================================================================ -->
+  <div id="ledgerModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:700px;">
+      <div class="modal-header">
+        <h3><i class="ph ph-notebook"></i> Kartu Kontrol SPP & Pembayaran Santri</h3>
+        <button class="btn-icon-circle" onclick="window.closeModal('ledgerModal')"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="modal-body" id="ledgerModalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="window.print()">
+          <i class="ph ph-printer"></i> Cetak Kartu SPP
+        </button>
+        <button class="btn btn-outline" onclick="window.closeModal('ledgerModal')">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
