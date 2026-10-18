@@ -12,7 +12,7 @@ const APP_NAME = 'Mambaul Huda';
 const APP_BASE = '/digitalisasi-spp-pesantren';
 // URL absolut untuk tujuan kembali setelah pembayaran Midtrans.
 // Sesuaikan jika aplikasi diakses melalui host/path yang berbeda.
-const APP_URL = 'https://jul-emphasis-mens-international.trycloudflare.com/digitalisasi-spp-pesantren';
+const APP_URL = 'https://checks-yet-aside-screens.trycloudflare.com/digitalisasi-spp-pesantren';
 
 const MIDTRANS_SERVER_KEY = ''; // ganti dengan Server Key Sandbox yang baru
 const MIDTRANS_CLIENT_KEY = ''; // ganti dengan Client Key Sandbox yang baru
