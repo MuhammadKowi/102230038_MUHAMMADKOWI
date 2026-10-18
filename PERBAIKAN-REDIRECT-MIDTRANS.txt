@@ -1,0 +1,11 @@
+PERBAIKAN REDIRECT MIDTRANS
+
+1. Salin folder digitalisasi-spp-pesantren ke htdocs, timpa file lama setelah membuat backup.
+2. Pastikan config.php memiliki APP_URL yang sesuai dengan alamat aplikasi. Untuk XAMPP default:
+   http://localhost/digitalisasi-spp-pesantren
+3. Snap token lama dapat menyimpan pengaturan redirect lama. Jalankan sekali di phpMyAdmin pada database pesantren_spp:
+   UPDATE payments SET snap_token = NULL WHERE method = 'midtrans' AND status = 'pending';
+   Periksa dulu nama kolom status dan metode sesuai database Anda. Query ini hanya menghapus token checkout, bukan transaksi.
+4. Buat pengajuan pembayaran Midtrans baru atau buka ulang checkout sehingga token baru dibuat. Uji pembayaran baru; token yang sudah terbit mungkin tetap memakai pengaturan lama.
+5. URL notifikasi server tetap harus berupa URL HTTPS publik yang mengarah ke midtrans_notification.php. APP_URL di atas hanya untuk redirect browser setelah checkout.
+6. Kunci Midtrans terlihat di berkas config.php yang diunggah. Demi keamanan, buat/rotasi ulang Server Key dan Client Key Sandbox di Dashboard Midtrans, lalu ganti nilai di config.php. Jangan membagikan Server Key.

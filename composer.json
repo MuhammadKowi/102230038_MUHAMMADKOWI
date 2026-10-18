@@ -1,0 +1,9 @@
+{
+  "require": {
+    "php": ">=8.0",
+    "midtrans/midtrans-php": "^2.6"
+  },
+  "suggest": {
+    "midtrans/midtrans-php": "Required to enable Midtrans Snap integration"
+  }
+}
