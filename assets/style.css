@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--green:#16865b;--green-dark:#0e6845;--green-soft:#eaf7f0;--ink:#172b24;--muted:#718078;--line:#e7eee9;--bg:#f6f9f7;--white:#fff;--red:#c43c3c;--amber:#9a6700;--shadow:0 10px 30px rgba(24,65,45,.05)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px 'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.app-shell{display:flex;min-height:100vh}.sidebar{width:255px;background:#eaf2ff;border-right:1px solid #d7e5fb;padding:25px 17px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:0 7px 30px}.brand-mark{width:43px;height:43px;background:linear-gradient(135deg,#20a66e,#087348);border-radius:13px;color:#fff;display:grid;place-items:center;font:800 15px Manrope;box-shadow:0 6px 14px #16865b2b}.brand strong{display:block;font:800 14px Manrope}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.side-label{font-size:10px;letter-spacing:1.3px;font-weight:700;color:#6e86a8;padding:0 12px 12px}.nav-link{display:flex;align-items:center;gap:12px;padding:12px 13px;border-radius:10px;color:#405879;margin:3px 0;font-weight:600;transition:.2s}.nav-link span{width:19px;text-align:center;font-size:17px}.nav-link:hover,.nav-link.active{background:#d5e5ff;color:#244f8a}.nav-link.active{font-weight:700}.sidebar-bottom{margin-top:auto;padding-top:24px}.profile-mini{display:flex;align-items:center;gap:10px;border-top:1px solid #d4e2f8;padding:18px 5px 12px}.avatar{width:36px;height:36px;border-radius:50%;background:#d9f1e4;color:var(--green-dark);display:grid;place-items:center;font-weight:800}.profile-mini strong{display:block;font-size:12px}.profile-mini small{color:var(--muted);font-size:11px}.logout{color:#a34b4b}.main-area{flex:1;min-width:0}.topbar{height:105px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:20px 34px}.eyebrow{font-size:10px;color:var(--green);font-weight:800;letter-spacing:1.7px;margin-bottom:6px}.topbar h1{font:800 24px Manrope;margin:0;letter-spacing:-.6px}.top-user{display:flex;align-items:center;gap:8px;color:#607067;font-weight:600;font-size:12px}.online-dot{width:8px;height:8px;background:#2bb779;border-radius:50%}.content{padding:30px 34px;max-width:1500px;margin:auto}.footer{padding:20px 34px;color:#9aa79f;font-size:11px;border-top:1px solid var(--line)}.grid{display:grid;gap:18px}.stats-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:24px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:var(--shadow);min-width:0}.stat-card{position:relative;overflow:hidden}.stat-card .stat-label{font-size:12px;color:var(--muted);font-weight:600}.stat-value{font:800 25px Manrope;margin:12px 0 6px;letter-spacing:-.6px}.stat-note{font-size:11px;color:#849188}.stat-icon{position:absolute;right:18px;top:18px;background:var(--green-soft);color:var(--green);width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:18px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.section-head h2,.card h2{font:800 16px Manrope;margin:0}.section-head p{color:var(--muted);margin:6px 0 0;font-size:12px}.two-col{grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 15px;border-radius:9px;border:1px solid transparent;background:var(--green);color:#fff;font-weight:700;cursor:pointer;font-size:12px;transition:.2s}.btn:hover{background:var(--green-dark)}.btn-light{background:#fff;border-color:var(--line);color:#4b5c52}.btn-light:hover{background:#f5faf7}.btn-danger{background:#fff0f0;color:var(--red);border-color:#f6d6d6}.btn-small{padding:7px 10px;font-size:11px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.form-group{display:flex;flex-direction:column;gap:7px}.form-group.full{grid-column:1/-1}label{font-size:12px;font-weight:700;color:#46564c}.input,select,textarea{width:100%;border:1px solid #dfe8e2;border-radius:9px;background:#fff;padding:11px 12px;outline:none;color:var(--ink);min-width:0}.input:focus,select:focus,textarea:focus{border-color:#4db78a;box-shadow:0 0 0 3px #16865b14}.help{font-size:11px;color:var(--muted);line-height:1.5}.table-wrap{width:100%;overflow:auto}table{border-collapse:collapse;width:100%;white-space:nowrap}th{text-align:left;background:#f8faf9;color:#849188;text-transform:uppercase;font-size:10px;letter-spacing:.6px;padding:13px 14px;font-weight:800}td{padding:14px;border-bottom:1px solid #edf2ee;font-size:12px}tr:last-child td{border-bottom:0}.person{display:flex;align-items:center;gap:9px}.person-avatar{width:32px;height:32px;border-radius:10px;background:#e9f6ee;color:#16865b;display:grid;place-items:center;font-weight:800}.person strong{display:block;font-size:12px}.person small{color:var(--muted);font-size:10px}.badge{display:inline-flex;align-items:center;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:800}.badge.paid{background:#e8f8ef;color:#14804e}.badge.pending{background:#fff5db;color:#936600}.badge.rejected,.badge.failed,.badge.expire{background:#fff0f0;color:#b33b3b}.badge.neutral{background:#edf1ee;color:#617067}.alert{padding:12px 15px;border-radius:10px;margin-bottom:18px;font-size:12px;font-weight:600}.alert.success{background:#e8f8ef;color:#146b43}.alert.error{background:#fff0f0;color:#a42c2c}.alert.warning{background:#fff5db;color:#805c00}.pill{display:inline-flex;background:#f0f5f1;padding:6px 9px;border-radius:8px;font-size:11px;color:#596a60}.month-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.month-option{position:relative}.month-option input{position:absolute;opacity:0}.month-option label{display:block;border:1px solid var(--line);padding:12px;border-radius:10px;cursor:pointer;background:#fff}.month-option input:checked+label{border-color:var(--green);background:var(--green-soft);box-shadow:0 0 0 1px var(--green)}.month-option small{display:block;color:var(--muted);font-weight:500;margin-top:5px}.month-option.overdue label{border-color:#f1d6a2}.payment-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.method-option input{position:absolute;opacity:0}.method-option label{height:100%;display:block;border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer}.method-option input:checked+label{border-color:var(--green);background:var(--green-soft)}.method-option strong{display:block;margin:6px 0}.method-option small{color:var(--muted);font-size:10px;line-height:1.4}.empty{text-align:center;padding:35px 12px;color:var(--muted)}.empty-icon{width:48px;height:48px;border-radius:15px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;margin:0 auto 12px;font-size:22px}.summary-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.summary-row:last-child{border-bottom:0}.summary-row span{color:var(--muted)}.summary-row strong{text-align:right}.responsive-only{display:none}
+@media(max-width:1100px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.content{padding:24px}.topbar{padding:18px 24px}.two-col{grid-template-columns:1fr}}
+@media(max-width:760px){.app-shell{display:block}.sidebar{width:100%;padding:13px;display:block;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 3px 12px}.side-label,.sidebar-bottom{display:none}.sidebar nav{display:flex;overflow:auto}.sidebar>.nav-link{display:inline-flex;white-space:nowrap;margin:0 3px;padding:9px 11px;font-size:11px}.sidebar>.nav-link span{display:none}.topbar{height:auto;padding:19px 18px}.topbar h1{font-size:20px}.top-user{display:none}.content{padding:17px}.stats-grid{gap:10px}.stat-card{padding:15px}.stat-value{font-size:20px}.stat-icon{position:static;margin-bottom:12px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.payment-methods{grid-template-columns:1fr}.card{padding:16px}.footer{padding:15px 18px}.section-head{align-items:flex-start;flex-direction:column}}
+
+/* Mobile right-side drawer navigation */
+.hamburger-btn,.sidebar-close,.sidebar-overlay{display:none}
+.topbar-title{min-width:0}
+.topbar-actions{display:flex;align-items:center;gap:14px}
+@media(max-width:760px){
+  .app-shell{display:block;min-height:100vh}
+  .sidebar{
+    background:#eaf2ff;
+    display:flex;flex-direction:column;position:fixed;z-index:1002;
+    top:0;right:0;bottom:0;width:min( min(86vw, 330px), 360px);
+    height:100dvh;overflow-y:auto;padding:26px 18px 20px;
+    border:0;border-left:1px solid rgba(20,60,40,.08);border-radius:22px 0 0 22px;
+    box-shadow:-18px 0 55px rgba(12,35,24,.18);
+    transform:translateX(105%);visibility:hidden;
+    transition:transform .32s cubic-bezier(.2,.8,.2,1),visibility .32s;
+  }
+  .sidebar.is-open{transform:translateX(0);visibility:visible}
+  .sidebar .brand{padding:8px 42px 26px 3px}
+  .sidebar .side-label{display:block}
+  .sidebar .nav-link,.sidebar>.nav-link{display:flex;width:100%;white-space:normal;margin:4px 0;padding:13px;border-radius:12px;font-size:13px}
+  .sidebar .nav-link span{display:inline-block}
+  .sidebar .sidebar-bottom{display:block;margin-top:auto}
+  .sidebar-close{
+    display:flex;position:absolute;top:19px;right:16px;width:36px;height:36px;
+    align-items:center;justify-content:center;flex-direction:column;gap:5px;
+    border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;
+  }
+  .sidebar-close span{display:block;width:15px;height:2px;border-radius:2px;background:#52645a}
+  .sidebar-close span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .sidebar-close span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  .sidebar-overlay{
+    display:block;position:fixed;inset:0;z-index:1001;background:rgba(12,28,21,.42);
+    backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+    opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;
+  }
+  .sidebar-overlay.is-visible{opacity:1;visibility:visible}
+  body.sidebar-open{overflow:hidden}
+  .topbar{height:auto;min-height:82px;padding:17px 16px;gap:12px}
+  .topbar-title{flex:1}
+  .topbar h1{font-size:19px;line-height:1.25}
+  .topbar-actions{gap:0}
+  .top-user{display:none}
+  .hamburger-btn{
+    display:flex;width:44px;height:44px;flex-shrink:0;
+    align-items:center;justify-content:center;flex-direction:column;gap:5px;
+    border:1px solid #e3ece6;border-radius:15px;
+    background:linear-gradient(145deg,#fff,#f3faf6);
+    box-shadow:0 5px 14px rgba(22,134,91,.10);cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  .hamburger-btn:active{transform:scale(.96)}
+  .hamburger-btn:focus-visible,.sidebar-close:focus-visible{outline:3px solid #8bd8b4;outline-offset:3px}
+  .hamburger-btn span{display:block;width:18px;height:2px;border-radius:3px;background:var(--green-dark);transition:transform .2s ease}
+}
+@media(prefers-reduced-motion:reduce){
+  .sidebar,.sidebar-overlay,.hamburger-btn,.hamburger-btn span{transition:none}
+}
+
+
+/* Premium popup notifications and action confirmations */
+.premium-modal-backdrop{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(12,31,22,.48);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+.premium-modal-backdrop.is-open{opacity:1;visibility:visible}
+.premium-modal{position:relative;width:min(100%,430px);padding:34px 30px 28px;border:1px solid rgba(255,255,255,.8);border-radius:24px;background:linear-gradient(145deg,#fff 0%,#fbfefc 100%);box-shadow:0 28px 90px rgba(6,35,20,.25),0 4px 18px rgba(22,134,91,.08);text-align:center;transform:translateY(12px) scale(.98);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.premium-modal-backdrop.is-open .premium-modal{transform:translateY(0) scale(1)}
+.premium-modal-close{position:absolute;right:14px;top:14px;width:34px;height:34px;border:1px solid #e8efe9;border-radius:11px;background:#fff;color:#75847a;font-size:24px;line-height:1;cursor:pointer}
+.premium-modal-icon{width:58px;height:58px;margin:0 auto 17px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(145deg,#dff7e9,#effbf4);color:#12804f;font:800 27px Manrope;box-shadow:inset 0 0 0 1px #ccebd9}
+.premium-modal-icon.error{background:linear-gradient(145deg,#fff0ef,#fff8f7);color:#c43c3c;box-shadow:inset 0 0 0 1px #f6d6d3}
+.premium-modal-icon.warning{background:linear-gradient(145deg,#fff5db,#fffaee);color:#9a6700;box-shadow:inset 0 0 0 1px #f1e0b5}
+.premium-modal-kicker{color:#16865b;font-size:9px;font-weight:800;letter-spacing:1.7px;margin-bottom:9px}
+.premium-modal h2{margin:0;color:#173b2a;font:800 22px Manrope;letter-spacing:-.45px}
+.premium-modal p{margin:11px 0 24px;color:#6b7b71;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.premium-modal-primary{min-width:155px;min-height:42px;border-radius:12px;box-shadow:0 7px 16px rgba(22,134,91,.18)}
+.premium-modal-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.premium-modal-actions .btn{min-width:120px;min-height:42px;border-radius:12px}
+body.premium-modal-open{overflow:hidden}
+@media(max-width:480px){.premium-modal{padding:31px 22px 24px;border-radius:21px}.premium-modal h2{font-size:20px}.premium-modal p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.premium-modal-backdrop,.premium-modal{transition:none}}
+
+.brand-mark{overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#fff;padding:3px}.brand-login .brand-mark img{width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#fff;padding:3px}
+
+/* Monthly billing cards: SPP Pondok and Jenjang shown side-by-side */
+.payment-month-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.billing-pair{display:grid;gap:9px;min-width:0}
+.billing-card{display:flex;align-items:center;gap:11px;min-width:0;padding:14px 13px;border:1px solid #e3ece6;border-radius:16px;background:#fff;cursor:pointer;transition:border-color .18s,background .18s,box-shadow .18s}
+.billing-card input{accent-color:var(--green);width:17px;height:17px;flex-shrink:0}
+.billing-card-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:#edf8f1;color:var(--green-dark);font-size:20px;flex-shrink:0}
+.billing-card-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.billing-card-copy strong{font-size:12px;line-height:1.4;color:#213c2e;overflow-wrap:anywhere}
+.billing-card-copy small{font-size:10px;color:#718077;line-height:1.4}
+.billing-card.is-selected{border-color:var(--green);background:#f0faf4;box-shadow:0 0 0 3px rgba(22,134,91,.08)}
+.billing-card.is-disabled{background:#f7f9f7;cursor:not-allowed;opacity:.75}
+.method-launchers{margin-top:10px}
+.method-launch{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:17px;border:1px solid #e1eae4;border-radius:16px;background:#fff;cursor:pointer;color:var(--text);font:inherit;transition:.2s}
+.method-launch:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(20,80,50,.08);transform:translateY(-1px)}
+.method-launch>span{font-size:25px}.method-launch strong{font-size:14px}.method-launch small{font-size:11px;color:var(--muted)}.method-launch b{font-size:10px;color:var(--green);margin-top:4px}
+@media(max-width:600px){.payment-month-grid{grid-template-columns:1fr}.billing-card{padding:12px}}
+
+/* Refined billing selection and method-specific payment dialogs */
+.student-fee-summary{display:grid;grid-template-columns:1fr auto;gap:5px 12px;align-items:center;padding:15px 17px;border:1px solid #e1eee5;border-radius:15px;background:linear-gradient(135deg,#f5fcf7,#fff)}
+.student-fee-summary>span:first-child{font-size:11px;color:var(--muted);font-weight:700}.student-fee-summary>strong{font:800 14px Manrope;color:#155c3d;text-align:right}.student-fee-summary .fee-summary-detail{grid-column:1/-1;font-size:11px;color:#68796e;margin-top:4px}
+.payment-month-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:14px}.billing-pair{gap:10px}.billing-card{position:relative;min-height:91px;padding:14px;border:1px solid #e5ece7;border-radius:17px;box-shadow:0 3px 12px rgba(22,60,38,.025)}.billing-card:hover:not(.is-disabled){border-color:#9bd6b6;box-shadow:0 8px 22px rgba(22,134,91,.08);transform:translateY(-1px)}.billing-card input{width:18px;height:18px;accent-color:#138552}.billing-card-icon{width:40px;height:40px;border-radius:13px;background:linear-gradient(145deg,#e5f7ec,#f4fbf6);font-size:21px}.billing-card[data-type="jenjang"] .billing-card-icon{background:linear-gradient(145deg,#e8efff,#f6f8ff);color:#4567b1}.billing-card-copy strong{font-size:12px;font-weight:800}.billing-card-copy small{font-size:10px}.billing-card-copy small:nth-child(2){font-weight:800;color:#3b6550}.billing-card.is-selected{border-color:#14945a;background:linear-gradient(135deg,#effbf4,#fff);box-shadow:0 0 0 2px rgba(20,148,90,.13),0 8px 24px rgba(20,148,90,.07)}.billing-card.is-disabled{filter:saturate(.7)}.billing-card-check{display:none;margin-left:auto;align-self:flex-start;flex-shrink:0;width:21px;height:21px;border-radius:50%;background:#148653;color:white;text-align:center;line-height:21px;font-size:12px;font-weight:900}.billing-card.is-selected .billing-card-check{display:block}
+.method-launchers{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.method-launch{position:relative;min-height:145px;padding:19px;border-radius:17px}.method-launch>span{width:44px;height:44px;display:grid;place-items:center;background:#f0f8f3;border-radius:14px;font-size:24px}.method-launch:nth-child(2)>span{background:#eef3ff}.method-launch strong{font:800 14px Manrope;color:#203c2d}.method-launch small{font-size:11px;line-height:1.5}.selected-method-note{margin-top:12px;padding:11px 13px;border-radius:10px;background:#f7faf8;color:#6a7c70;font-size:11px;line-height:1.5}.method-launch b{font-size:10px}.method-modal-rich{width:min(100%,560px);max-height:min(88vh,850px);overflow-y:auto;text-align:left;padding:30px}.method-modal-rich .premium-modal-icon{margin:0 0 14px}.method-modal-rich .premium-modal-kicker{text-align:left}.method-modal-rich h2{font-size:23px}.method-modal-rich .method-modal-content>p{margin:10px 0 18px;font-size:12px;line-height:1.7}.method-modal-rich .premium-modal-actions{justify-content:flex-end;margin-top:22px}.method-modal-rich .premium-modal-close{position:sticky;float:right;top:0;margin:-9px -9px 0 8px;z-index:2}.cash-steps{display:grid;gap:10px;margin:16px 0}.cash-steps>div{display:grid;grid-template-columns:30px 1fr;gap:2px 10px;align-items:center;padding:12px;border:1px solid #e6eee8;border-radius:12px;background:#fbfdfb}.cash-steps>div>span{grid-row:span 2;display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#e2f5e9;color:#168653;font-weight:900}.cash-steps strong{font-size:12px;color:#254a35}.cash-steps small{font-size:10px;color:#738177;line-height:1.5}.bank-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bank-choice{display:flex;align-items:flex-start;gap:10px;position:relative;padding:13px;border:1px solid #e1eae4;border-radius:13px;cursor:pointer;background:white;min-width:0}.bank-choice:has(input:checked){border-color:#168653;background:#f1fbf5;box-shadow:0 0 0 2px #16865318}.bank-choice input{margin-top:3px;accent-color:#168653;flex-shrink:0}.bank-choice>span:last-child{display:flex;flex-direction:column;gap:5px;min-width:0}.bank-choice strong{font-size:12px;color:#254333}.bank-choice small{font-size:10px;color:#6b7a70;line-height:1.45;overflow-wrap:anywhere}.bank-mark{display:grid;place-items:center;min-width:43px;height:32px;padding:0 6px;border-radius:8px;color:#fff;font-size:10px;font-weight:900;letter-spacing:.4px}.bank-mark.bri{background:#1767b1}.bank-mark.bca{background:#1765b7}.proof-upload{margin-top:17px;padding:14px;border:1px dashed #cbded0;border-radius:13px;background:#fbfefc}.proof-upload label{margin-bottom:2px}.required-mark{color:#d14c4c}.modal-total{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px;padding:14px 15px;border-radius:12px;background:#f0faf4;border:1px solid #d9f0e2}.modal-total span{font-size:11px;color:#5d7565}.modal-total strong{font:800 17px Manrope;color:#13814e}.payment-summary-card{align-self:start;position:sticky;top:18px}.summary-heading-icon{display:grid;place-items:center;width:42px;height:42px;margin-bottom:14px;border-radius:13px;background:#e5f7ec;color:#138653;font-size:20px;font-weight:900}.payment-summary-card h2{font-size:17px}.payment-summary-card>.help{margin:8px 0 17px}.summary-total{margin-top:7px;padding-top:16px}.summary-total strong{font:800 20px Manrope;color:#138653}.payment-summary-card .alert{line-height:1.6}
+@media(max-width:760px){.payment-summary-card{position:static}.payment-month-grid{grid-template-columns:1fr}.method-launchers{grid-template-columns:1fr 1fr}.bank-choice-grid{grid-template-columns:1fr}.method-modal-rich{padding:26px 20px;max-height:90vh}.billing-card{min-height:84px}}
+@media(max-width:420px){.method-launchers{grid-template-columns:1fr}.method-launch{min-height:unset}.student-fee-summary{padding:13px}.billing-card{gap:9px;padding:11px}.billing-card-icon{width:34px;height:34px}.billing-card-copy strong{font-size:11px}}
+
+/* Submenu pengaturan pesantren */
+.nav-group{margin:2px 0}.nav-group .nav-chevron{margin-left:auto;font-size:16px;opacity:.65}.nav-submenu{display:grid;gap:4px;margin:2px 0 8px 35px;padding-left:11px;border-left:1px solid rgba(130,160,140,.28)}.nav-sublink{display:block;padding:9px 11px;border-radius:9px;color:var(--muted,#7c8a80);font-size:12px;text-decoration:none;transition:background .18s,color .18s}.nav-sublink:hover,.nav-sublink.active{background:rgba(22,134,91,.1);color:#16865b;font-weight:800}.nav-group-active>.nav-link{color:#16865b}
+
+/* Tema clean putih dan biru soft */
+:root{--green:#527bb8;--green-dark:#365f9b;--green-soft:#edf4ff;--ink:#1c2d43;--muted:#74849a;--line:#e3eaf4;--bg:#f5f8fd;--shadow:0 10px 30px rgba(50,85,135,.06)}
+body{background:var(--bg);color:var(--ink)}
+.sidebar,.topbar,.card{background:#fff}
+.brand-mark{background:linear-gradient(135deg,#8bb6f0,#4c79bd);box-shadow:0 6px 14px #527bb82b}
+.nav-link:hover,.nav-link.active{background:#edf4ff;color:#365f9b}
+.stat-icon,.avatar,.empty-icon{background:#edf4ff;color:#527bb8}
+.btn{background:#527bb8}.btn:hover{background:#365f9b}.btn-light{background:#fff;border-color:#dce6f4;color:#526783}.btn-light:hover{background:#f2f6fc}
+
+
+.billing-card{border-color:#e1e9f5;box-shadow:0 5px 16px rgba(54,95,155,.045);border-radius:18px;transition:all .2s ease}
+.billing-card:hover:not(.is-disabled){border-color:#9dbce9;box-shadow:0 12px 28px rgba(65,108,174,.12);transform:translateY(-2px)}
+.billing-card-icon{background:linear-gradient(145deg,#e6f0ff,#f5f8ff);color:#527bb8}
+.billing-card[data-type="jenjang"] .billing-card-icon{background:linear-gradient(145deg,#e5eaff,#f7f8ff);color:#6b76b7}
+.billing-card-copy small:nth-child(2){color:#527bb8}
+.billing-card.is-selected{border-color:#6f9bd9;background:linear-gradient(135deg,#edf4ff,#fff);box-shadow:0 0 0 2px rgba(82,123,184,.13),0 8px 24px rgba(82,123,184,.08)}
+.billing-card-check{background:#527bb8}
+.student-fee-summary{border-color:#dce8fa!important;background:linear-gradient(120deg,#edf4ff,#fff)!important;border-radius:18px!important}
+.bank-choice{border-color:#e0e8f4;border-radius:15px;align-items:flex-start}.bank-choice:has(input:checked){border-color:#7da2d8;background:#f1f6ff;box-shadow:0 0 0 2px #527bb81a}
+.bank-account-copy{display:flex;flex-direction:column;gap:6px;min-width:0}.bank-account-copy .copy-account{align-self:flex-start;margin-top:3px}.bank-account-number{font-weight:800;letter-spacing:.3px;color:#2f4f7b!important}
+.method-launch>span{background:#edf4ff}.method-launch:nth-child(2)>span{background:#e9f0ff}
+.modal-total{background:#eff5ff;border-color:#dce8fb}.modal-total strong,.summary-total strong{color:#527bb8}
+@media(max-width:760px){.billing-card{border-radius:15px}}
+/* Kartu jenjang dan akses pembayaran pada dashboard santri */
+.stats-grid .stat-card:nth-child(3),.stats-grid .stat-card:nth-child(4){border:1px solid #dfe9f8;background:linear-gradient(145deg,#fff 0%,#f4f8ff 100%);box-shadow:0 12px 28px rgba(63,101,158,.07)}
+.stats-grid .stat-card:nth-child(3) .stat-icon,.stats-grid .stat-card:nth-child(4) .stat-icon{background:linear-gradient(145deg,#e4eeff,#f3f7ff);color:#527bb8}
+.stats-grid .stat-card:nth-child(3) .stat-value,.stats-grid .stat-card:nth-child(4) .stat-value{color:#2e4e7c}
+.stats-grid .stat-card:nth-child(4) .stat-note a{color:#527bb8!important}
+
+/* Penyempurnaan tema biru soft: tiga kartu pembayaran per baris */
+.payment-month-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.payment-month-grid .billing-card{min-width:0;padding:15px;gap:10px}
+@media(max-width:980px){.payment-month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.payment-month-grid{grid-template-columns:1fr}.payment-month-grid .billing-card{padding:14px}}
+
+/* Samakan ikon yang sebelumnya hijau dengan palet biru soft */
+.stat-icon,.empty-icon,.person-avatar,.summary-heading-icon,
+.billing-card-icon,.method-launch>span,
+.premium-modal-icon:not(.error):not(.warning),.cash-steps>div>span{
+  background:#edf4ff!important;color:#527bb8!important;
+}
+.brand-mark{background:linear-gradient(135deg,#8bb6f0,#4c79bd)!important;box-shadow:0 6px 14px #527bb82b!important}
+.nav-link:hover,.nav-link.active,.nav-sublink:hover,.nav-sublink.active,.nav-group-active>.nav-link{background:#edf4ff!important;color:#365f9b!important}
+.billing-card.is-selected .billing-card-check{background:#527bb8!important;color:#fff!important}
+.billing-card.is-selected{border-color:#6f9bd9!important;background:linear-gradient(135deg,#edf4ff,#fff)!important;box-shadow:0 0 0 2px rgba(82,123,184,.13),0 8px 24px rgba(82,123,184,.08)!important}
+
+/* Dashboard admin: grafik pembayaran dan notifikasi verifikasi */
+.admin-pending-notice{background:#edf4ff;color:#365f9b;border:1px solid #d8e6fb;line-height:1.7}.admin-pending-notice a{font-weight:800;text-decoration:underline;margin-left:5px}.monthly-chart-card{margin-bottom:24px}.monthly-chart{height:250px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;align-items:end;padding:10px 0 0}.chart-column{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;min-width:0}.chart-value{font-size:9px;color:#6c7f9a;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.chart-track{height:170px;width:min(100%,30px);display:flex;align-items:flex-end;justify-content:center;background:#f1f5fc;border-radius:8px 8px 3px 3px;overflow:hidden}.chart-bar{width:100%;min-height:3px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,#8bb6ed,#527bb8);transition:height .25s}.chart-label{font-size:10px;color:#71849f;white-space:nowrap}.topbar-actions{display:flex;align-items:center;gap:14px}.notification-link{position:relative;display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #e0e9f7;border-radius:10px;color:#527bb8;background:#f8faff;font-size:11px;font-weight:800}.notification-link>span:first-child{font-size:16px}.notification-link b{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:#527bb8;color:white;font-size:10px}.notification-link.has-notifications{border-color:#b9cfee;background:#edf4ff}@media(max-width:760px){.monthly-chart{gap:4px;height:210px}.chart-track{height:135px;width:min(100%,20px)}.chart-label{font-size:8px;transform:rotate(-35deg);transform-origin:top center;margin-top:3px}.chart-value{font-size:7px}.topbar-actions{gap:8px}.notification-link{padding:7px 8px}.notification-link>span:nth-child(2){display:none}}
+
+/* Icon-only notification center, aligned with the soft blue theme */
+.notification-icon-btn{position:relative;display:grid;place-items:center;width:42px;height:42px;padding:0;border:1px solid #dce7f8;border-radius:13px;background:#f5f8ff;color:#527bb8;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.notification-icon-btn:hover{background:#eaf1ff;border-color:#b9cfee;transform:translateY(-1px)}
+.notification-icon-btn>svg,.notification-modal-icon svg,.notification-item-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.notification-count{position:absolute;top:-5px;right:-5px;display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border:2px solid #fff;border-radius:12px;background:#527bb8;color:#fff;font-size:10px;font-weight:800;line-height:1}
+.notification-icon-btn.has-notifications{background:#edf4ff;border-color:#b9cfee}
+.notification-modal{width:min(100%,470px);text-align:left;border-color:#e1e9f8;background:linear-gradient(145deg,#fff 0%,#f8faff 100%);box-shadow:0 28px 90px rgba(38,66,112,.2),0 4px 18px rgba(82,123,184,.08)}
+.notification-modal .notification-modal-icon{margin-left:0;background:linear-gradient(145deg,#e4edff,#f1f5ff);color:#527bb8;box-shadow:inset 0 0 0 1px #d4e1fa}
+.notification-modal .premium-modal-kicker{color:#527bb8}
+.notification-modal h2{color:#1d2f49}
+.notification-intro{margin:8px 0 18px!important;color:#70809a!important}
+.notification-list{display:grid;gap:10px;margin:0 0 22px}
+.notification-item{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid #dfe8f7;border-radius:15px;background:#fff;color:inherit;text-decoration:none;transition:border-color .18s,background .18s,transform .18s;min-width:0}
+.notification-item:hover,.notification-item:focus-visible{border-color:#a9c3ed;background:#f5f8ff;transform:translateY(-1px);outline:none}
+.notification-item-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:13px;background:#edf4ff;color:#527bb8}
+.notification-item-copy{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}
+.notification-item-copy strong{font-size:12px;color:#263b5b}
+.notification-item-copy small{font-size:11px;line-height:1.55;color:#70809a}
+.notification-item-arrow{font-size:26px;color:#527bb8;line-height:1}
+.notification-empty{display:grid;justify-items:center;gap:8px;padding:24px 15px;border:1px dashed #d6e2f4;border-radius:15px;background:#f8faff;text-align:center}
+.notification-empty>span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#e7efff;color:#527bb8;font-size:21px;font-weight:800}
+.notification-empty strong{font-size:13px;color:#263b5b}
+.notification-empty small{max-width:280px;font-size:11px;line-height:1.6;color:#70809a}
+.notification-modal>.premium-modal-primary{display:block;margin-left:auto;background:#527bb8;box-shadow:0 7px 16px rgba(82,123,184,.18)}
+@media(max-width:480px){.notification-icon-btn{width:38px;height:38px}.notification-modal{padding:30px 18px 22px}.notification-item{padding:12px;gap:9px}.notification-item-icon{flex-basis:36px;width:36px;height:36px}}
+
+/* Consistent premium payment card sizing */
+.payment-month-grid{align-items:stretch;grid-auto-rows:1fr}
+.payment-month-grid .billing-pair{display:flex;flex-direction:column;min-width:0;height:100%}
+.payment-month-grid .billing-card{box-sizing:border-box;flex:1 1 100%;height:100%;min-height:112px;align-items:center}
+.payment-month-grid .billing-card-copy{flex:1;align-self:center}
+@media(max-width:560px){.payment-month-grid .billing-card{min-height:100px}}
+
+/* Requested refinements: destructive actions stay red; empty billing pairs collapse; blue receipt theme */
+.btn-danger,.btn.btn-danger{background:#dc3545!important;color:#fff!important;border-color:#dc3545!important}
+.btn-danger:hover,.btn.btn-danger:hover{background:#bb2d3b!important;border-color:#b02a37!important;color:#fff!important}
+.payment-month-grid .billing-pair:has(.billing-card:only-child){grid-column:span 1}
+.payment-month-grid .billing-pair{align-content:start}
+.payment-month-grid .billing-pair:has(.billing-card:only-child) .billing-card{height:auto;min-height:112px}
+.receipt-paper{border-color:#dce7f8!important;color:#233a5b!important;box-shadow:0 18px 55px rgba(42,79,135,.09)!important}
+.receipt-logo{background:linear-gradient(135deg,#7da7e3,#416da9)!important}
+.receipt-label span{color:#527bb8!important}
+.receipt-rule{background:linear-gradient(90deg,#527bb8,#b8d0f2,#edf4ff)!important}
+.receipt-amount{background:linear-gradient(120deg,#edf4ff,#f8faff)!important;border-color:#d8e6fb!important}
+.receipt-amount strong{color:#365f9b!important}
+.receipt-section-title{color:#527bb8!important}
+.receipt-items th,.receipt-items tfoot td{background:#edf4ff!important;color:#365f9b!important}
+.receipt-meta{border-top-color:#d8e6fb!important}
+.receipt-note{background:#f8faff!important;border-left-color:#527bb8!important}
+.receipt-footer{border-top-color:#dce7f8!important}
+@media print{.receipt-paper{-webkit-print-color-adjust:exact;print-color-adjust:exact}.receipt-rule,.receipt-logo,.receipt-amount,.receipt-items th,.receipt-items tfoot td{ -webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* Sidebar diselaraskan dengan tema utama biru soft */
+.sidebar{background:linear-gradient(180deg,#ffffff 0%,#f8faff 100%);border-right:1px solid #dfe8f5;box-shadow:5px 0 24px rgba(49,82,130,.035)}
+.sidebar .brand{border-bottom:1px solid #e8eef8;margin-bottom:22px}
+.sidebar .brand strong{color:#203b60}
+.sidebar .brand small{color:#7b8da8}
+.sidebar .side-label{color:#8295b2}
+.sidebar .nav-link{color:#5d708c;border:1px solid transparent;border-radius:11px}
+.sidebar .nav-link span{color:#7894ba}
+.sidebar .nav-link:hover{background:#f0f5fd;color:#315f9f;border-color:#e2ebf9}
+.sidebar .nav-link:hover span{color:#315f9f}
+.sidebar .nav-link.active{background:linear-gradient(100deg,#eaf2ff 0%,#f4f8ff 100%);color:#315f9f;border-color:#d9e6fa;box-shadow:inset 3px 0 0 #527bb8}
+.sidebar .nav-link.active span{color:#315f9f}
+.sidebar .nav-group-active>.nav-link{color:#315f9f}
+.sidebar .nav-submenu{border-left-color:#d8e5f7}
+.sidebar .nav-sublink{color:#7185a2}
+.sidebar .nav-sublink:hover,.sidebar .nav-sublink.active{background:#eaf2ff;color:#315f9f}
+.sidebar .profile-mini{border-top-color:#e2eaf6}
+.sidebar .avatar{background:#e7f0ff;color:#315f9f}
+.sidebar .logout{color:#a34b59}
+.sidebar .logout span{color:#b35d69}
+@media(max-width:760px){.sidebar{background:linear-gradient(180deg,#fff 0%,#f7faff 100%);border-bottom-color:#dfe8f5;box-shadow:0 5px 20px rgba(49,82,130,.04)}.sidebar .brand{border-bottom:1px solid #e8eef8;margin-bottom:10px}}
+
+/* Konsistensi ukuran kartu tagihan SPP Pondok dan SPP Jenjang */
+.payment-month-grid{align-items:stretch!important;grid-auto-rows:1fr}
+.payment-month-grid .billing-pair{display:flex;align-items:stretch;min-width:0}
+.payment-month-grid .billing-card{box-sizing:border-box;width:100%;min-width:0;min-height:112px;height:112px!important;flex:0 0 112px;align-items:center}
+.payment-month-grid .billing-card-copy{flex:1;min-width:0}
+@media(max-width:560px){.payment-month-grid .billing-card{min-height:100px;height:100px!important;flex-basis:100px}}
+
+/* Tagihan mengalir mengisi sel kosong; setiap kartu berdiri sendiri dalam grid */
+.payment-month-grid{grid-auto-flow:row;grid-auto-rows:112px!important;align-content:start!important;align-items:stretch!important}
+.payment-month-grid>.billing-card{display:flex!important;width:100%;height:112px!important;min-height:112px!important;max-height:112px;flex:none!important;min-width:0;align-self:stretch}
+.payment-month-grid>.billing-pair{display:contents!important}
+@media(max-width:560px){.payment-month-grid{grid-auto-rows:100px!important}.payment-month-grid>.billing-card{height:100px!important;min-height:100px!important;max-height:100px}}
+
+/* Kartu tagihan pada panel admin mengikuti komponen pembayaran santri. */
+.admin-billing-month-grid{align-items:stretch;grid-auto-flow:row dense}
+.admin-billing-month-grid .billing-card{min-height:112px;height:100%;cursor:default;align-items:center}
+.admin-billing-month-grid .billing-card.is-unpaid{background:#fff}
+.admin-billing-month-grid .billing-card.is-disabled{opacity:1;filter:none;background:#fbfcff}
+.admin-billing-month-grid .billing-card-icon{flex:0 0 40px}
+.admin-billing-month-grid .billing-card-copy{flex:1}
+@media(max-width:560px){.admin-billing-month-grid .billing-card{min-height:96px;padding:12px}}
+
+/* Responsive polish: payment cards, branded header, proof modal and reports */
+.topbar-brand{display:flex;align-items:center;gap:13px}.topbar-logo,.topbar-logo-fallback{width:48px;height:48px;object-fit:contain;border-radius:12px;background:#f4faf6;padding:4px;flex-shrink:0}.topbar-logo-fallback{display:grid;place-items:center;font-weight:800;color:var(--green)}
+.student-filter-row label{display:block;margin-bottom:7px}
+.proof-modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(11,28,20,.68);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}.proof-modal-backdrop.is-open{display:flex}.proof-modal{width:min(900px,100%);max-height:92vh;background:#fff;border-radius:18px;box-shadow:0 24px 80px #0004;display:flex;flex-direction:column;overflow:hidden}.proof-modal-head{display:flex;align-items:center;justify-content:space-between;padding:17px 22px;border-bottom:1px solid var(--line)}.proof-modal-head h2{font:800 17px Manrope;margin:0}.proof-close{border:0;background:#f1f5f2;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}.proof-preview{min-height:220px;overflow:auto;display:flex;align-items:center;justify-content:center;padding:18px;background:#f3f6f4}.proof-preview img{display:block;max-width:100%;max-height:62vh;object-fit:contain;border-radius:8px;box-shadow:0 4px 18px #0001}.proof-preview iframe{width:100%;height:62vh;border:0;background:white}.proof-modal-actions{display:flex;justify-content:flex-end;gap:9px;padding:15px 22px;border-top:1px solid var(--line)}.payment-rejection-note{margin-top:7px;display:inline-block;width:max-content;max-width:none;white-space:nowrap;overflow-wrap:normal;word-break:normal;color:#a52e36;background:#fff0f0;border:1px solid #f5d1d1;border-radius:8px;padding:7px 9px;font-size:11px;line-height:1.4}.modal-open{overflow:hidden}
+@media(min-width:768px) and (max-width:1200px){.content{padding:24px}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:18px}.topbar{padding:18px 24px}.topbar h1{font-size:21px}}
+@media(max-width:767px){.topbar-brand{gap:9px}.topbar-logo,.topbar-logo-fallback{width:38px;height:38px}.topbar{padding:15px 16px}.topbar h1{font-size:18px}.content{padding:16px}.stats-grid{grid-template-columns:1fr 1fr}.proof-modal-backdrop{padding:10px}.proof-modal{max-height:96vh}.proof-modal-actions{padding:12px;flex-wrap:wrap}.proof-preview iframe{height:55vh}}
+@media(max-width:420px){.stats-grid{grid-template-columns:1fr}.top-user{display:none}}
+@media print{.no-print,.report-export-actions{display:none!important}.report-print-head{display:flex!important}}
+
+/* Tablet/laptop card grids stay fluid without horizontal overflow */
+.grid,.two-col,.one-col{min-width:0}.grid>*{min-width:0}.month-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr));gap:10px}.month-option{min-width:0}.summary-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}.summary-row strong{overflow-wrap:anywhere}
+@media(min-width:768px) and (max-width:1100px){.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}.month-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:767px){.two-col{grid-template-columns:1fr}.month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Fix kartu pembayaran: tinggi mengikuti isi dan grid responsif pada laptop/tablet/HP. */
+.payment-month-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))!important;grid-auto-flow:row!important;grid-auto-rows:auto!important;align-items:stretch!important;align-content:normal!important;gap:12px!important;overflow:visible!important}
+.payment-month-grid>.billing-card,.payment-month-grid .billing-card,.payment-month-grid>.billing-pair .billing-card{box-sizing:border-box!important;display:flex!important;width:100%!important;height:auto!important;min-height:104px!important;max-height:none!important;flex:initial!important;align-self:stretch!important;align-items:center!important;gap:12px!important;padding:15px!important;min-width:0!important;white-space:normal!important}
+.payment-month-grid>.billing-pair{display:block!important;min-width:0!important}
+.payment-month-grid .billing-card-copy{flex:1 1 auto!important;min-width:0!important;overflow-wrap:anywhere!important}
+.payment-month-grid .billing-card-copy strong,.payment-month-grid .billing-card-copy small{display:block;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.45!important}
+.payment-month-grid .billing-card-icon,.payment-month-grid .billing-card-check{flex-shrink:0!important}
+@media(min-width:768px) and (max-width:1100px){.payment-month-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){.payment-month-grid{grid-template-columns:1fr!important}.payment-month-grid>.billing-card,.payment-month-grid .billing-card{min-height:92px!important;padding:13px!important}}
+.report-export-actions .btn-light{display:inline-flex;align-items:center;gap:10px;border:1px solid #cbd9d0;background:#f5faf6;color:#145b3c;font-weight:800;padding:10px 16px;border-radius:12px;text-decoration:none;min-height:54px}
+.report-export-actions .btn-light:hover{background:#e8f5ec;border-color:#91bda2}
+.payment-head-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+@media(max-width:760px){.payment-head-actions{width:100%}.payment-head-actions .btn{flex:1 1 auto;justify-content:center}}
+
+/* Modal bukti pembayaran: selalu di atas seluruh komponen, responsif untuk santri/admin. */
+.proof-modal-backdrop{position:fixed!important;inset:0!important;z-index:2147483000!important;display:none;align-items:center;justify-content:center;padding:clamp(8px,2vw,24px);background:rgba(8,20,14,.76);box-sizing:border-box;}
+.proof-modal-backdrop.is-open{display:flex!important;}
+.proof-modal{position:relative;width:min(900px,100%);max-height:calc(100dvh - 32px);margin:auto;min-height:0;}
+.proof-preview{flex:1;min-height:120px;max-height:calc(100dvh - 170px);overflow:auto;overscroll-behavior:contain;}
+.proof-preview img{width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 230px);object-fit:contain;}
+.proof-preview iframe{display:block;width:100%;height:min(65vh,720px);min-height:260px;}
+.proof-modal-head,.proof-modal-actions{flex-shrink:0;}
+@media(max-width:767px){
+ /* Pop-up bukti versi mobile dibuat mengambang, tidak memenuhi layar. */
+ .proof-modal-backdrop{padding:16px;align-items:center;justify-content:center;}
+ .proof-modal{width:min(92vw,440px);height:auto;max-height:82dvh;border-radius:18px;display:flex;box-shadow:0 20px 60px rgba(0,0,0,.28);}
+ .proof-modal-head{padding:12px 14px;}
+ .proof-modal-head h2{font-size:15px;}
+ .proof-preview{flex:0 1 auto;min-height:100px;max-height:54dvh;padding:10px;align-items:center;}
+ .proof-preview img{max-width:100%;max-height:52dvh;object-fit:contain;}
+ .proof-preview iframe{height:48dvh;min-height:180px;max-height:48dvh;}
+ .proof-modal-actions{padding:10px 12px;display:flex;gap:8px;}
+ .proof-modal-actions .btn{flex:1;min-width:0;min-height:40px;padding:9px 10px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;}
+}
+
+
+/* Loading screen pesantren: orbit lingkaran berputar */
+.school-loading-screen{
+  position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+  padding:24px;background:radial-gradient(ellipse at 50% 35%,#f5f9ff 0%,#eaf2ff 48%,#dce9fb 100%);
+  opacity:1;visibility:visible;transition:opacity .42s ease,visibility .42s ease;
+}
+.school-loading-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.school-loading-content{width:min(360px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.school-loader-orbit{width:142px;height:142px;position:relative;display:grid;place-items:center;margin-bottom:26px}
+.school-loader-orbit:before,.school-loader-orbit:after{content:"";position:absolute;inset:5px;border-radius:50%;border:2px solid transparent}
+.school-loader-orbit:before{border-top-color:#234f8e;border-right-color:#477fc4;animation:schoolOrbitSpin 1.35s linear infinite}
+.school-loader-orbit:after{inset:15px;border-bottom-color:#e0ad48;border-left-color:#8db5e8;animation:schoolOrbitSpinReverse 1.8s linear infinite}
+.school-loader-logo{position:relative;z-index:2;width:78px;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:50%;background:#fff;border:1px solid #dce7f7;box-shadow:0 8px 28px rgba(31,73,130,.15);animation:schoolLogoPulse 1.8s ease-in-out infinite}
+.school-loader-logo img{display:block;width:100%;height:100%;object-fit:contain;padding:9px}
+.school-loader-logo>span{font-size:31px;font-weight:900;color:#234f8e}
+.school-loader-dot{position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;background:#2e66a8;box-shadow:0 0 0 4px rgba(46,102,168,.12)}
+.school-loader-dot-one{top:4px;left:50%;transform:translateX(-50%);animation:schoolDotPulse 1.2s ease-in-out infinite}
+.school-loader-dot-two{right:8px;bottom:29px;background:#e0ad48;animation:schoolDotPulse 1.2s .25s ease-in-out infinite}
+.school-loader-dot-three{left:13px;bottom:25px;background:#6b9bd7;animation:schoolDotPulse 1.2s .5s ease-in-out infinite}
+.school-loader-name{max-width:100%;font-size:clamp(18px,4vw,23px);font-weight:900;letter-spacing:.2px;line-height:1.35;color:#193b68;overflow-wrap:anywhere}
+.school-loader-caption{margin-top:5px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6d86a7}
+.school-loader-progress{width:170px;height:4px;margin-top:23px;overflow:hidden;border-radius:20px;background:#cfdef2}
+.school-loader-progress span{display:block;width:42%;height:100%;border-radius:20px;background:linear-gradient(90deg,#244e88,#5c94d6,#e0ad48);animation:schoolProgressRun 1.35s ease-in-out infinite}
+.school-loader-status{margin-top:12px;font-size:11px;color:#6e819d;letter-spacing:.2px}
+@keyframes schoolOrbitSpin{to{transform:rotate(360deg)}}
+@keyframes schoolOrbitSpinReverse{to{transform:rotate(-360deg)}}
+@keyframes schoolLogoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@keyframes schoolDotPulse{0%,100%{opacity:1;box-shadow:0 0 0 4px rgba(46,102,168,.12)}50%{opacity:.55;box-shadow:0 0 0 7px rgba(46,102,168,.04)}}
+@keyframes schoolProgressRun{0%{transform:translateX(-110%)}100%{transform:translateX(350%)}}
+@media(prefers-reduced-motion:reduce){
+ .school-loader-orbit:before,.school-loader-orbit:after,.school-loader-logo,.school-loader-dot,.school-loader-progress span{animation-duration:4s}
+ .school-loading-screen{transition:none}
+}
